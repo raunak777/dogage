@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Human</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body{
+			background-image: url(dd.gif);
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 500px;
+			width: 100%;
+		}
+
+		input[type=number]{
+            padding: 3%;
+            border:1px solid #D1CDC7;
+            border-radius: 10px;
+        }
+        button{
+             background-color: #612E24;
+             padding: 15px 20px;
+             color: #D1CDC7;
+             border:1px solid #D1CDC7;
+             font-weight: 800;
+             border-radius: 10px;
+
+        }
+         div{
+            padding-top: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: 7%;
+            margin-left: 30%;
+            background-color: #342F2D;
+            width: 40%;
+            height: auto;
+            padding-bottom: 15px;
+            opacity: 0.8;
+            border-radius: 5px;
+
+        }
+        p{
+            color: #D1CDC7;
+            font-size: 25px;
+            font-weight: 800;
+        }
+        h1{
+        	color: #FDFBFA;
+        	font-weight: 1000;
+        }
+        h3{
+        	color: #FDFBFA;
+        	font-weight: 800;
+        }
+        .fa{
+        	font-size:100px;
+        	color: white;
+        }
+	</style>
+
+</head>
+<body><div>
+	<center>
+		<i class="fa fa-paw" aria-hidden="true"></i>
+	<h1>Human Age to Dog Age</h1>
+	<h3>Enter your current age</h3>
+<input type="number" name="year" id="age" placeholder="Enter Years"> <input style="margin-top: 20px;" type="number" name="month" id="month" placeholder="Enter Month"><br>
+<br><br>
+<button type="button" onclick="ageCalculate()"><b>Convert Age!</b></button>
+<p id="demo"></p></center>
+</div>
+<script>
+	function ageCalculate()
+	{
+		var humanAge=document.getElementById("age").value;
+		var month=document.getElementById("month").value;
+		var divMonth=month/12;
+		var rem=0;
+		var to=0;
+		var n=10.5;
+		if (humanAge>=21) {
+			humanAge-=21;
+				rem=(humanAge+divMonth)/4;
+			var re=rem-parseInt(rem);
+			var day=re*12;
+			var d=day-parseInt(day);
+			console.log(d);
+			document.getElementById("demo").innerHTML= (2+parseInt(rem)) +" Year "+ (parseInt(day)) +" Month " +(parseInt(d*30))+ " Day";
+		}
+		else if (humanAge<21 && humanAge!=0) {
+				to= ((parseFloat(humanAge)+divMonth)/n);
+				var too=to-parseInt(to);
+				var day=too*12;
+				var d=day-parseInt(day);
+				console.log(d);
+				document.getElementById("demo").innerHTML=parseInt(to)+" Year "+ parseInt(day)+ "  Month " + (parseInt(d*30))+" Day";
+		}
+		else if (humanAge==0 || humanAge==null) {
+			document.getElementById("demo").innerHTML="Please enter years and month!";
+		}
+		
+	}
+</script>
+</body>
+</html>
